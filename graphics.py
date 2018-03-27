@@ -1,7 +1,6 @@
 __author__ = 'Trenton'
 import pygame
 
-
 width = 1200
 height = 600
 

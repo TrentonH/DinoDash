@@ -3,6 +3,12 @@ import pygame
 
 import graphics
 
+pygame.init()
+space = pygame.mixer.music.load('Spacetime.mp3')
+pygame.mixer.music.play(-1)
+
+foot = pygame.mixer.Sound('Footsteps2.wav')
+
 
 class unit(object):
 	def __init__(self, x, y):
@@ -37,27 +43,35 @@ class George(unit):
 
 	def handler(self, event):
 		if event.type == pygame.KEYDOWN:
+			foot.play()
+
+
 			if event.key == pygame.K_UP:
 				self.facing = "up"
 				self.y -= 2
+
 				if self.y < 0:
 					self.y = 0
 			elif event.key == pygame.K_DOWN:
 				self.facing = "down"
 				self.y += 2
+
 				if self.y > (599 - 48):
 					self.y = 599 - 48
 			elif event.key == pygame.K_LEFT:
 				self.facing = "left"
 				self.x -= 2
+
 				if self.x < 0:
 					self.x = 0
 			elif event.key == pygame.K_RIGHT:
 				self.facing = "right"
 				self.x += 2
+
 				if self.x > (799 - 48):
 					self.x = 799 - 48
 		if event.type == pygame.KEYUP:
+			foot.stop()
 			if event.key == pygame.K_UP:
 				self.facing = "s_up"
 				if self.y < 0:

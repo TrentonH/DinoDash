@@ -12,7 +12,7 @@ import event
 
 # back = graphics.load("stars.png")
 
-graphics.background = graphics.load("maze1.png")
+graphics.background = graphics.load("Easy Maze.png")
 
 george = units.George(25, 25)
 george.facing = "s_down"
@@ -38,13 +38,15 @@ event.register(quit)
 clock = pygame.time.Clock()
 run = True
 frame = 0
+
 while (run):
+
+
 	clock.tick(30)
 
 	event.update()
 	george.update()
 	#george2.update()
 	graphics.update()
-
 
 pygame.display.quit()
